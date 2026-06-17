@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toskano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <h1>taskano</h1>
+            <div class="search-bar">
+                <div class="input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                     <input type="text" id="main-search" placeholder="Search...">
+                </div>
+                <button id="search-btn">find me 🤷‍♀️</button>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#welcome-text">Home</a></li>
+                    <li><a href="#tasks-section">Tasks</a></li>
+                    <li><a href="#timeline-section">Timeline</a></li>
+                    <li><a href="#notes-section">Notes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#welcome-text">Dashboard</a></li>
+                <li><a href="#pomodoro-section">Pomodoro</a></li>
+                <li><a href="#habits-section">Habits</a></li>
+                <li><a href="#tasks-section">Tasks</a></li>
+            </ul>
+        </aside> 
+
+        <main class="content">
+            <section id="welcome-text" class="page-section">
+                <h2>Made by love ❤</h2>
+                <p>Start organizing your study time here with Anway💕.</p>
+            </section>
+
+
+        
+            <section id="tasks-section" class="page-section card">
+                 <h2>tasks</h2>
+                 <p>Here you can add and manage your study tasks.</p>
+    
+                    <div class="task-input-container">
+                       <input type="text" id="task-input" placeholder="Add a new task...">
+                      <button id="add-task-btn">Add Task</button>
+                 </div>
+
+    <ul id="tasks-list"></ul>
+</section>
+
+
+            <section id="timeline-section" class="page-section card">
+                <h2>timeline</h2>
+                <p>View your study schedule and deadlines.</p>
+                <div class="timeLine-input-container">
+                    <input type="text" id="event-input" placeholder="Event (eg. physics Exam...)">
+                    <input type="date" id="event-date">
+                    <button id="add-event-btn">Add Event</button>
+                </div>
+                <ul id="timeline-List" style="List-style:none;width:100%; padding:0 ; margin-top:15px;"></ul>
+            </section>
+
+            <section id="notes-section" class="page-section card">
+                <h2>notes</h2>
+                <p>Keep your study notes organized here.</p>
+                <div class="notes-container" style="width:100%; max-width: 500 px;display:flex; flex-direction:column; gap:10px;">
+                    <textarea id="note-input" placeholder="Write you Quick study notes here...." row="3" style="width:100%; padding:10px; border-radius: 8px
+                    ; border:1px solid#9ca3af;outline:none; color :black; resize:none; font-family: sans-serif; "></textarea>
+                    <button id="add-note-btn" style="width : fit-content;">Save Notes</button>
+                </div> 
+                <div id="notes-list" style="width:100%; max-Width: 500px; gap:10px; margin-top:15px;display:flex; flex-direction:column;"></div>
+            </section>
+
+  
+            <section id="pomodoro-section" class="page-section card">
+                <h2>pomodoro</h2>
+                <h1 id="time-display" style="font-size: 60px; margin: 15px 0; color: #c69904;">25:00</h1>
+                <p>Use the pomodoro technique to manage your study sessions.</p>
+                <button id="pomodoro-btn">  Start Pomodoro</button>
+            </section>
+
+
+
+            <section id="habits-section" class="page-section card">
+                <h2>habits</h2>
+                <p>Track your study habits and progress.</p>
+                
+                <div id="habit-input-container" style="display: flex; gap: 10px; width: 100%; "max-width:400px>
+                    <input type="text" id="habit-input" placeholder="e.g, reading.."  style=" flex:1 ; padding:10 px; border-radius: 8px; border:1 px solid #9ca3af;
+                    ; outline:none; color:black;">
+                    <button id ="add-habit-btn">Add Habits</button>
+                </div>
+                <ul id="habits-list" style="list-style:none; width:100%; padding:0;margin-top:15px;"></ul>
+            </section>
+
+        </main>
+    </div>
+    <div class="footer">
+        <p> 2026 Taskano. Made with ❤️ and Anway.</p>
+        <p> for future improvements.please contact via email at <a href="mailto:medotota678@gmail.com" style="color:#c69904;text decoration
+            :underline;">medotota678@gmail.com</a>🙌</p>
+        </p>
+    </div>
+    <script src="study.js"></script>
+</body>
+</html>
