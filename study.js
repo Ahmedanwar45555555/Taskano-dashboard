@@ -1,3 +1,5 @@
+ /*pomodoro timer*/
+ 
  const timeDisplay=document.getElementById("time-display");
  const pomodoroBtn= document.getElementById("pomodoro-btn");
  let timeLeft=25*60;
@@ -16,12 +18,12 @@ function toggleTimer(){
     if(isRunning){
         clearInterval(timeId);
         pomodoroBtn.textContent="start pomodoro";
-        pomodoroBtn.style.backgroundColor="#c69904";
+        pomodoroBtn.classList.remove("running");
         isRunning=false;
     }else{
         isRunning= true;
         pomodoroBtn.textContent= "pause";
-        pomodoroBtn.style.backgroundColor="#ef4444";
+        pomodoroBtn.classList.add("running");
         timeId=setInterval(()=>{
             if(timeLeft>0){timeLeft--;
                 updateDisplay();
@@ -31,7 +33,7 @@ function toggleTimer(){
                 timeLeft=25*60;
                 updateDisplay();
                 pomodoroBtn.textContent = 'Start Pomodoro';
-                pomodoroBtn.style.backgroundColor = '#c69904';
+                pomodoroBtn.classList.remove("running");
                 isRunning = false;
             }
         }, 1000);
@@ -39,7 +41,7 @@ function toggleTimer(){
 }
 pomodoroBtn.addEventListener('click', toggleTimer);
 
-
+ /*task management*/
 const taskInput = document.getElementById("task-input");
 const addTaskBtn = document.getElementById("add-task-btn");
 const tasksList = document.getElementById("tasks-list");
@@ -53,21 +55,12 @@ function addTask() {
     }
 
     const li = document.createElement("li");
-    li.style.display = "flex";
-    li.style.justifyContent = "space-between";
-    li.style.width = "100%";
-    li.style.background = "#1f2937";
-    li.style.padding = "10px 15px";
-    li.style.borderRadius = "8px";
-    li.style.marginBottom = "8px";
-    li.style.alignItems = "center";
-    li.style.maxWidth = "400px";
+    li.classList.add("list-item-card");
     
   
     li.innerHTML = `
-        <span style="color: #fff; font-size: 16px;">${taskText}</span>
-        <button class="delete-btn" style="background: #ef4444; color: #fff; border: none; padding: 5px 10px; border-radius: 5px; cursor:
-         pointer; font-size:12px;">Delete</button>
+        <span class= "item-text">${taskText}</span>
+        <button class="delete-btn btn-danger">Delete</button>
     `;
 
     li.querySelector(".delete-btn").addEventListener("click", function() {
@@ -85,7 +78,7 @@ taskInput.addEventListener("keypress", function(event) {
     }
 });
 
-
+ /*timeline management*/
 const eventInput= document.getElementById("event-input");
 const addEventBtn=document.getElementById("add-event-btn");
 const eventDate=document.getElementById("event-date");
@@ -96,12 +89,13 @@ addEventBtn.addEventListener("click", ()=>{
     const dateText=eventDate.value;
     if (eventText ===""|| dateText ===""){
         alert("please enter both event and date, bro!");
+        return;
     }
     const Li=document.createElement("Li");
-    Li.style.cssText="background:#1f2937;padding:10px 15px;border-radius:8px;margin-bottom:8px; display:flex; justify-content:space-between;align-items:center;max-width:400px;border-left:3px solid#ef4444;";
+    Li.classList.add("list-item-card","timeline-item");
     Li.innerHTML=`
         <span style="color: white"><strong>${dateText}</strong> - ${eventText}</span>
-        <button class="del-event" style="background:none;border:none; color:#ef4444;cursor:pointer;font-weight:bold;">X</button>
+        <button class="del-event text-danger">X</button>
         `;
 
  Li.querySelector(".del-event").addEventListener("click",() =>Li.remove());
@@ -110,7 +104,7 @@ addEventBtn.addEventListener("click", ()=>{
  eventDate.value="";
 });
 
-
+ /*Note Management*/
 
 const noteInput=document.getElementById("note-input");
 const addNoteBtn=document.getElementById("add-note-btn");
@@ -123,16 +117,18 @@ addNoteBtn.addEventListener("click",()=>{
         return;
     }
     const noteCard=document.createElement("div");
-    noteCard.style.cssText="background:#1f2937; padding:15px; border-radius:8px; position:relative;border-left:3px solid #c69904;";
+    noteCard.classList.add("list-item-card");
     noteCard.innerHTML=`
-        <p style="color:white; margin:0; font-size:15px; white-space:pre-warp;">${noteText}</p>
-        <button class="del-note" style="position:absolute;top:10px; right:10px;background:none; border:none ; color:#9ca3af; cursor:pointer;">DELETE</button>
+        <p class="note-text">${noteText}</p>
+        <button class="del-note">DELETE</button>
         `;
         noteCard.querySelector(".del-note").addEventListener("click",()=>noteCard.remove());
         noteList.appendChild(noteCard);
         noteInput.value="";
 
     });
+
+     /*Habit Management*/
 
     const habitInput=document.getElementById("habit-input");
     const addHabitBtn=document.getElementById("add-habit-btn");
@@ -146,32 +142,26 @@ addNoteBtn.addEventListener("click",()=>{
 
     
     const Li=document.createElement("Li");
-    Li.style.cssText="background:#1f2937; padding:10px 15px; border-radius:8px; margin-bottom:8px; display:flex;jusify-content:space-between;align-items:center;max-width:400px;";
+    Li.classList.add("list-item-card", "habit-item");
     Li.innerHTML=`
-    <div style="display:flex; align-items:center;gap:10px;">
-    <input type="checkbox" style="width:18px; height:18px; cursor:pointer;">
-    <span style="color: white;;">${habitText}</span>
+    <div class="habit-wrapper">
+    <input type="checkbox">
+    <span class="item-text">${habitText}</span>
     </div>
-    <button class="del-habit" style=" background : none; border:none;color:#ef4444;cursor:pointer;">DELETE</button>
+    <button class="del-habit text-danger">DELETE</button>
     `;
      const checkbox=Li.querySelector("input[type='checkbox']");
      const span=Li.querySelector("span");
-     checkbox.addEventListener("change",()=>{
-        if (checkbox.checked) {
-            span.style.textDecoration="line-through";
-            span.style.color="#9ca3af";
-        }else{
-            span.style.textDecoration="none";
-            span.style.color="white";
 
-        }
+     checkbox.addEventListener("change",()=>{
+        span.classList.toggle("completed",checkbox.checked);
      });
      Li.querySelector(".del-habit").addEventListener("click",()=>Li.remove());
      habitList.appendChild(Li);
      habitInput.value="";
     });
 
-
+ /*search*/
     const mainSearch = document.getElementById("main-search");
 const searchBtn = document.getElementById("search-btn");
      
@@ -183,9 +173,9 @@ function performSearch() {
     cards.forEach(card => {
         const cardContent = card.innerText.toLowerCase();
         if (cardContent.includes(query) || query === "") {
-            card.style.display = "flex"; 
+            card.classList.remove("hidden"); 
         } else {
-            card.style.display = "none"; 
+            card.classList.add("hidden"); 
         }
     });
 }
