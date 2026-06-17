@@ -59,3 +59,6 @@ This project was created to practice:
 ## Author
 
 Ahmed Anwar
+<img width="1918" height="918" alt="image" src="https://github.com/user-attachments/assets/efc195e4-e142-4248-afd9-ff2fc4a6c6dd" />
+<img width="1898" height="901" alt="image" src="https://github.com/user-attachments/assets/63871012-e08b-43b8-a0ef-322f152e1086" />
+
