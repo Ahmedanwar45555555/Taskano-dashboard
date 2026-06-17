@@ -69,24 +69,23 @@
                     <input type="date" id="event-date">
                     <button id="add-event-btn">Add Event</button>
                 </div>
-                <ul id="timeline-List" style="List-style:none;width:100%; padding:0 ; margin-top:15px;"></ul>
+                <ul id="timeline-List"></ul>
             </section>
 
             <section id="notes-section" class="page-section card">
                 <h2>notes</h2>
                 <p>Keep your study notes organized here.</p>
-                <div class="notes-container" style="width:100%; max-width: 500 px;display:flex; flex-direction:column; gap:10px;">
-                    <textarea id="note-input" placeholder="Write you Quick study notes here...." row="3" style="width:100%; padding:10px; border-radius: 8px
-                    ; border:1px solid#9ca3af;outline:none; color :black; resize:none; font-family: sans-serif; "></textarea>
-                    <button id="add-note-btn" style="width : fit-content;">Save Notes</button>
+                <div class="notes-container">
+                    <textarea id="note-input" placeholder="Write you Quick study notes here...." row="3"></textarea>
+                    <button id="add-note-btn">Save Notes</button>
                 </div> 
-                <div id="notes-list" style="width:100%; max-Width: 500px; gap:10px; margin-top:15px;display:flex; flex-direction:column;"></div>
+                <div id="notes-list"></div>
             </section>
 
   
             <section id="pomodoro-section" class="page-section card">
                 <h2>pomodoro</h2>
-                <h1 id="time-display" style="font-size: 60px; margin: 15px 0; color: #c69904;">25:00</h1>
+                <h1 id="time-display">25:00</h1>
                 <p>Use the pomodoro technique to manage your study sessions.</p>
                 <button id="pomodoro-btn">  Start Pomodoro</button>
             </section>
@@ -97,20 +96,18 @@
                 <h2>habits</h2>
                 <p>Track your study habits and progress.</p>
                 
-                <div id="habit-input-container" style="display: flex; gap: 10px; width: 100%; "max-width:400px>
-                    <input type="text" id="habit-input" placeholder="e.g, reading.."  style=" flex:1 ; padding:10 px; border-radius: 8px; border:1 px solid #9ca3af;
-                    ; outline:none; color:black;">
+                <div id="habit-input-container">
+                    <input type="text" id="habit-input" placeholder="e.g, reading..">
                     <button id ="add-habit-btn">Add Habits</button>
                 </div>
-                <ul id="habits-list" style="list-style:none; width:100%; padding:0;margin-top:15px;"></ul>
+                <ul id="habits-list"></ul>
             </section>
 
         </main>
     </div>
     <div class="footer">
         <p> 2026 Taskano. Made with ❤️ and Anway.</p>
-        <p> for future improvements.please contact via email at <a href="mailto:medotota678@gmail.com" style="color:#c69904;text decoration
-            :underline;">medotota678@gmail.com</a>🙌</p>
+        <p> for future improvements.please contact via email at <a href="mailto:medotota678@gmail.com">medotota678@gmail.com</a>🙌</p>
         </p>
     </div>
     <script src="study.js"></script>

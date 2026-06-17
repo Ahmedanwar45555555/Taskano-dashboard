@@ -32,13 +32,6 @@ body{
     z-index: 100;
 }
 
-.navbar h1 {
-    font-size : 30px;
-    font-family : 'Segoe UI' , Tahoma , Geneva , Verdana , sans-serif ;
-    color : #000000;
-    font-weight : bold;
-    letter-spacing : 1px;
-}
 
 .task-input-container {
     display : flex;
@@ -56,11 +49,12 @@ body{
     max-width: 1200px;
     padding: 0 20px;
 }
-    .navbar h1 {
-    font-size: 24px;
-    color: #000000;
-    font-weight: bold;
-    letter-spacing: 1px;
+.navbar h1 {
+    font-size : 30px;
+    font-family : 'Segoe UI' , Tahoma , Geneva , Verdana , sans-serif ;
+    color : #000000;
+    font-weight : bold;
+    letter-spacing : 1px;
 }
 
 .logo{
@@ -273,6 +267,118 @@ body{
     color:black;
 }
 
+.task-input-container {
+    display: flex;
+    gap:10px;
+    width : 100%;
+    max-width: 400px;
+}
+#task-input {
+ flex:1;
+ padding : 10px;
+ border-radius :8px;
+ border: 1px solid #9ca3af;
+ outline:none;
+ color: black;
+}
+
+#task-list {
+    list-style:none;
+    width: 100%;
+    padding: 0;
+    margin-top: 15 px;
+
+}
+
+.timeLine-input-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+
+}
+#event-input {
+    flex:2;
+    padding: 10px;
+    border-radius : 8px;
+    border: 1px solid #9ca3af;
+    outline:none;
+    color:black;
+
+}
+
+#timeLine-List {
+    list-style:none;
+    width: 100%;
+    padding:0;
+    margin-top: 15px;
+
+}
+
+.notes-container{
+    width:100%;
+    max-width: 500px;
+    display : flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+#note-input{
+    width: 100%;
+    padding:10px;
+    border-radius: 8px;
+    border: 1px solid #9ca3af;
+    outline:none;
+    color:black;
+    resize: none;
+    font-family :sans-serif;
+}
+
+#add-note-btn{
+    width:fit-content;
+}
+
+#note-list{ 
+    width:100%;
+    max-width: 500px;
+    gap: 10px;
+    margin-top:15px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#time-display{
+    font-size: 60px;
+    margin: 15px 0;
+    color: #c69904;
+}
+
+#habit-input-container{
+    display:flex;
+     gap: 10px;
+     width: 100%;
+     max-width: 400px;
+}
+
+#habit-input{
+    flex: 1;
+    padding: 10px;
+    border-radius : 8px;
+    border:1px solid #9ca3af;
+    outline :none;
+    color: black;
+}
+
+#habit-list{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin-top: 15px;
+}
+
+
 .footer {
     background:#111827;
     color:white;
@@ -287,4 +393,8 @@ body{
     width: calc(100% - 260px);
     box-sizing: border-box;
 
+}
+.footer p {
+    color:#c69904;
+    text-decoration:underline;
 }
