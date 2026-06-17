@@ -398,3 +398,93 @@ body{
     color:#c69904;
     text-decoration:underline;
 }
+
+#pompdoro-btn.running{
+    background-color: #ef4444;
+
+}
+
+.list-item-card{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    width:100%;
+    max-width: 400px;
+    background:#1f2937;
+    padding:10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.item-text {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.timeline-item{
+    border-left:3px solid #ef4444;
+
+}
+.btn-danger {
+    backgrond-color: #ef4444;
+    color:#ffffff;
+    border:none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+
+.text-danger {
+    background:none;
+    border:none;
+    color:#ef4444;
+    cursor:pointer;
+    font-weight: bold;
+}
+
+.note-text {
+    color: white;
+    margin:0 ;
+    font-size: 15px;
+    white-space: pre-wrap;
+
+
+}
+
+
+.del-note {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border:none;
+    color:#9ca3af;
+    cursor:pointer;
+}
+
+.habit-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.habit-checkbox {
+    width:18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+
+.item-text.completed {
+    text-decoration:line-through;
+    color:#9ca3af;
+}
+
+
+.page-section.card.hidden {
+    display: none !important;
+}
